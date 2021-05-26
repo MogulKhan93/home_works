@@ -54,18 +54,15 @@ sample_dict['class_b']['student4']['marks']['physics'] = 90
 print(sample_dict)
 
 # 6. Подсчитать средний бал по каждому студенту (результат округлить до 2 знаков после запятой);
-sr_bal_stud1 = round((sample_dict['class_a']['student1']['marks']['physics'] + \
-                sample_dict['class_a']['student1']['marks']['math'] + \
-                sample_dict['class_a']['student1']['marks']['history']) / 3, 2)
-sr_bal_stud2 = round((sample_dict['class_a']['student2']['marks']['physics'] + \
-                sample_dict['class_a']['student2']['marks']['math'] + \
-                sample_dict['class_a']['student2']['marks']['history']) / 3, 2)
-sr_bal_stud3 = round((sample_dict['class_b']['student3']['marks']['physics'] + \
-                sample_dict['class_b']['student3']['marks']['math'] + \
-                sample_dict['class_b']['student3']['marks']['history']) / 3, 2)
-sr_bal_stud4 = round((sample_dict['class_b']['student4']['marks']['physics'] + \
-                sample_dict['class_b']['student4']['marks']['math'] + \
-                sample_dict['class_b']['student4']['marks']['history']) / 3, 2)
+l = len(sample_dict['class_a']['student1']['marks'])  # number of subjects
+sr_bal_stud1 = round(sum(list(sample_dict['class_a']['student1'] \
+                                  ['marks'].values())) / l, 2)
+sr_bal_stud2 = round(sum(list(sample_dict['class_a']['student2'] \
+                                  ['marks'].values())) / l, 2)
+sr_bal_stud3 = round(sum(list(sample_dict['class_b']['student3'] \
+                                  ['marks'].values())) / l, 2)
+sr_bal_stud4 = round(sum(list(sample_dict['class_b']['student4'] \
+                                  ['marks'].values())) / l, 2)
 
 print(sr_bal_stud1)
 print(sr_bal_stud2)
@@ -87,8 +84,10 @@ best_stud = list(sr_bal_stud_dict.keys()) \
 print('best student - ' + best_stud)
 
 # 9. Подсчитать средний бал по каждому классу (результат округлить до 2 знаков после запятой);
-sr_bal_class_a = round((sr_bal_stud1 + sr_bal_stud2) / 2, 2)
-sr_bal_class_b = round((sr_bal_stud3 + sr_bal_stud4) / 2, 2)
+l_a = len(sample_dict['class_a'])  # number of students in the class a
+l_b = len(sample_dict['class_b'])  # number of students in the class b
+sr_bal_class_a = round((sr_bal_stud1 + sr_bal_stud2) / l_a, 2)
+sr_bal_class_b = round((sr_bal_stud3 + sr_bal_stud4) / l_b, 2)
 
 print(sr_bal_class_a)
 print(sr_bal_class_b)
