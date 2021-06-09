@@ -9,7 +9,14 @@
 def inp():
     x = input('Enter your favorite number ')
     return x
-
+def f1():
+    print('Please, be more careful and enter the number itself, >= 0')
+def f2():
+    print('Be more careful!The number must be >= 0')
+def f3():
+    print('Enter a number >=0! I give one last chance!')
+def f4():
+    print('Fu**ng user..Goodbye!')
 
 
 att = 0  # quantity of attempts
@@ -20,17 +27,16 @@ for i in range(7):
         if int(a) < 0:
             att = i + 1
             if 3 < att <= 5:
-                print('Be more careful!The number must be >= 0')
+                f2()
                 continue
             elif att == 6:
-                print('Enter a number >=0! I give one last chance!')
+                f3()
                 continue
             elif att > 6:
-                print('Fu**ng user..Goodbye!')
+                f4()
                 break
             else:
-                print('Please, be more careful and enter \
-the number itself, >= 0')
+                f1()
                 continue
         else:
             print(f'Your favorite number is {int(a)}. Good job!')
@@ -38,14 +44,14 @@ the number itself, >= 0')
     except ValueError:
         att = i + 1
         if 3 < att <= 5:
-            print('Be more careful!The number must be >= 0')
+            f2()
             continue
         elif att == 6:
-            print('Enter a number >=0! I give one last chance!')
+            f3()
             continue
         elif att > 6:
-            print('Fu**ng user..Goodbye!')
+            f4()
             break
         else:
-            print('Please, be more careful and enter the number itself, >= 0')
+            f1()
             continue
