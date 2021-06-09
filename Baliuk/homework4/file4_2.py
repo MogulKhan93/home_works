@@ -25,19 +25,7 @@ for i in range(7):
     a = inp()
     try:
         if int(a) < 0:
-            att = i + 1
-            if 3 < att <= 5:
-                f2()
-                continue
-            elif att == 6:
-                f3()
-                continue
-            elif att > 6:
-                f4()
-                break
-            else:
-                f1()
-                continue
+            raise ValueError
         else:
             print(f'Your favorite number is {int(a)}. Good job!')
             break
