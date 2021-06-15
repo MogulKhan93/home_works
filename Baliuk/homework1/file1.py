@@ -5,7 +5,7 @@ age = input('enter your age')
 sex = input('enter your gender')
 
 about_me_concat = 'Hello! My name is '+ name +'. I\'m '+ age +' and I\'m a '\
-+ sex +'.'
+ + sex + '.'
 print(about_me_concat)
 about_me_percent = 'Hello! My name is %s. I\'m %s and I\'m a %s.' % (name, age, sex)
 print(about_me_percent)
